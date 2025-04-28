@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <!-- Make site mobile-responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Static Website</title>
+    <title>Sweetly Global Website</title>
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#317EFB"/>
+
     <style>
         /* ============================= */
         /* General Page Styles */
@@ -144,7 +148,43 @@
         <div></div>
     </div>
 </header>
+<button id="installButton" style="display: none;">Install App</button>
+<!-- This is the for the script code for the windows install code -->
+<script>
+    // Register the service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(function(registration) {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch(function(error) {
+          console.log('Service Worker registration failed:', error);
+        });
+    }
 
+    // Handle the install prompt
+    let deferredPrompt;
+    const installButton = document.getElementById('installButton');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      installButton.style.display = 'block';
+    });
+
+    installButton.addEventListener('click', () => {
+      installButton.style.display = 'none';
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the install prompt');
+        } else {
+          console.log('User dismissed the install prompt');
+        }
+        deferredPrompt = null;
+      });
+    });
+  </script>
 <!-- ============================= -->
 <!-- JavaScript for Burger Menu Toggle -->
 <!-- ============================= -->

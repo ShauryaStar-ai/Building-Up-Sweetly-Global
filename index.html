@@ -1,1 +1,158 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set the character encoding for the document -->
+    <meta charset="UTF-8">
+    <!-- Ensure proper scaling on different screen sizes (responsive design) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Website</title>
+    <style>
+        /* General Styles */
+        /* This sets the font for the whole page to Arial, sans-serif. It also removes default margins and padding */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;  /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            box-sizing: border-box; /* Makes sure that padding and border are included in the width/height */
+            background-color: #FFE5CC; /* Set the background color to light cream */
+        }
+
+        /* Header styles */
+        /* This sets the background color of the header and gives it some padding */
+        header {
+            background-color: #333;  /* Dark gray background for header */
+            padding: 10px 0;  /* 10px padding at the top and bottom */
+            position: fixed;  /* Fix the header at the top of the page */
+            width: 100%;  /* Full width of the page */
+            top: 0;  /* Position it at the top */
+            left: 0;  /* Position it on the left */
+            z-index: 1000;  /* Ensures header stays above other elements */
+        }
+
+        /* Navbar container */
+        /* Use flexbox to display the navigation items horizontally and space them out evenly */
+        .navbar {
+            display: flex;  /* Use flexbox for layout */
+            justify-content: space-around;  /* Distribute items evenly */
+            align-items: center;  /* Vertically align items */
+        }
+
+        /* Style for the navbar links */
+        .navbar a {
+            color: white;  /* White text color */
+            text-decoration: none;  /* Remove underline from links */
+            padding: 10px 20px;  /* Padding around the text */
+            font-size: 18px;  /* Set the font size */
+        }
+
+        /* Hover effect for links */
+        /* This changes the background of the link when you hover over it */
+        .navbar a:hover {
+            background-color: #575757;  /* Darker background on hover */
+            border-radius: 5px;  /* Round the corners */
+        }
+
+        /* Burger menu (used for mobile view) */
+        .burger {
+            display: none;  /* Hide the burger icon by default */
+            flex-direction: column;  /* Stack the three divs vertically */
+            cursor: pointer;  /* Make it look clickable */
+        }
+
+        .burger div {
+            width: 25px;  /* Set width of the bars */
+            height: 3px;  /* Set height of the bars */
+            margin: 5px 0;  /* Add space between the bars */
+            background-color: white;  /* Set the color of the bars to white */
+            transition: 0.3s;  /* Smooth transition for animations */
+        }
+
+        /* Responsive styles for smaller screens (mobile view) */
+        @media (max-width: 768px) {
+            /* Navbar on smaller screens will be hidden initially */
+            .navbar {
+                display: none;  /* Hide the navbar */
+                width: 100%;  /* Full width */
+                text-align: center;  /* Center the links */
+                position: absolute;  /* Position navbar on top of content */
+                top: 60px;  /* Offset from the top of the page */
+                left: 0;  /* Align it to the left */
+                background-color: #333;  /* Dark background color */
+            }
+
+            /* Make each navbar link a block element and space them out vertically */
+            .navbar a {
+                display: block;  /* Make the links take up full width */
+                padding: 10px;  /* Add padding for easier clicking */
+                border-top: 1px solid #575757;  /* Add a border between links */
+            }
+
+            /* Show the burger icon on mobile view */
+            .burger {
+                display: flex;  /* Show the burger icon */
+                position: absolute;  /* Position it above the navbar */
+                top: 15px;  /* Offset from the top */
+                right: 20px;  /* Offset from the right */
+            }
+
+            /* When the navbar is active, show it on screen */
+            .navbar.active {
+                display: block;  /* Make the navbar visible */
+            }
+
+            /* Burger icon animation when clicked */
+            .burger.open div:nth-child(1) {
+                transform: rotate(45deg);  /* Rotate the first bar */
+                position: relative;
+                top: 7px;  /* Move it slightly down */
+            }
+
+            .burger.open div:nth-child(2) {
+                opacity: 0;  /* Hide the second bar */
+            }
+
+            .burger.open div:nth-child(3) {
+                transform: rotate(-45deg);  /* Rotate the third bar */
+                position: relative;
+                top: -7px;  /* Move it slightly up */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <!-- Navbar with links to different sections -->
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#business-plan">Business Plan</a>
+        <a href="#menu">Menu</a>
+        <a href="#about-us">About Us</a>
+    </div>
+
+    <!-- Burger menu (only visible on mobile) -->
+    <div class="burger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</header>
+
+<!-- Content of the page -->
+
+<script>
+    // Function to toggle the mobile menu
+    function toggleMenu() {
+        const navbar = document.querySelector('.navbar');  /* Get the navbar */
+        const burger = document.querySelector('.burger');  /* Get the burger icon */
+        
+        // Toggle the 'active' class on the navbar to show/hide it
+        navbar.classList.toggle('active');  
+        
+        // Toggle the 'open' class on the burger icon to animate it
+        burger.classList.toggle('open');  
+    }
+</script>
+
+</body>
+</html>

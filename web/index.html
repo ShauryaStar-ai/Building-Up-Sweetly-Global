@@ -28,7 +28,7 @@
         header {
             background-color: white; /* White background for the header */
             padding: 10px 0; /* Top and bottom padding */
-            position: fixed; /* Fix header at top */
+            /*position: fixed; /* Fix header at top */
             width: 100%; /* Full width */
             top: 0; /* Align to top */
             left: 0; /* Align to left */
@@ -133,6 +133,7 @@
 <!-- ============================= -->
 <!-- Header: Navbar and Burger Icon -->
 <!-- ============================= -->
+
 <header>
     <div class="navbar">
         <a href="#home">Home</a>
@@ -141,20 +142,23 @@
         <a href="#about-us">About Us</a>
     </div>
 
-    <!-- Burger icon (3 bars) -->
+    
     <div class="burger" onclick="toggleMenu()">
         <div></div>
         <div></div>
         <div></div>
     </div>
 </header>
+
+
 <button id="installButton" style="display: none;">Install App</button>
 <!-- This is the for the script code for the windows install code -->
 <script>
     // Register the service worker
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
+      navigator.serviceWorker.register('./service-worker.js')
         .then(function(registration) {
+           // alert('Service Worker registered with scope:'+ registration.scope);
           console.log('Service Worker registered with scope:', registration.scope);
         })
         .catch(function(error) {
@@ -164,25 +168,27 @@
 
     // Handle the install prompt
     let deferredPrompt;
-    const installButton = document.getElementById('installButton');
 
     window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      installButton.style.display = 'block';
+    e.preventDefault();
+    deferredPrompt = e;
+    
+    // Show your "Install" button
+    document.getElementById('installButton').style.display = 'block';
     });
 
-    installButton.addEventListener('click', () => {
-      installButton.style.display = 'none';
-      deferredPrompt.prompt();
-      deferredPrompt.userChoice.then((choiceResult) => {
+    document.getElementById('installButton').addEventListener('click', () => {
+    if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === 'accepted') {
-          console.log('User accepted the install prompt');
+            console.log('User accepted install');
         } else {
-          console.log('User dismissed the install prompt');
+            console.log('User dismissed install');
         }
         deferredPrompt = null;
-      });
+        });
+    }
     });
   </script>
 <!-- ============================= -->

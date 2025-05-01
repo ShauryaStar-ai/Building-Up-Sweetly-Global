@@ -108,7 +108,7 @@
         #installButton {
             position: fixed; /* Fixed position for visibility */
             top: 20px; /* Distance from top */
-            left: 20px; /* Distance from left */
+            left: 5px; /* Distance from left */
             z-index: 1000; /* Ensure it's above other elements */
             display: none; /* Initially hidden */
         }

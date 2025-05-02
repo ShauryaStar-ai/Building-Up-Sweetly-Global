@@ -112,9 +112,9 @@
             z-index: 1000; /* Ensure it's above other elements */
             display: none; /* Initially hidden */
         }
-        #learnMoreButton {
+        #learnMoreButton{
             position: absolute; /* Position relative to the parent container */
-            top: calc(50% + 350px); /* Keep the adjusted position */
+        
             left: 50%; /* Center horizontally */
             transform: translate(-50%, -50%); /* Adjust for the button's own dimensions */
             z-index: 1000; /* Ensure it's above other elements */
@@ -272,7 +272,7 @@
             }
 
             #learnMoreButton {
-                top: calc(50% - 30px); /* Move it down by 50px */
+               
                 padding: 12px 24px; /* Further reduce padding */
                 font-size: 20px; /* Further reduce font size */
                 margin-top: 15px; /* Adjust spacing above the button */

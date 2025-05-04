@@ -163,7 +163,7 @@
 
         .text-box pre {
             font-family: "Journal Sans New Display", serif; /* Update font */
-            font-size: 27px; /* Increase font size by 1.5 times (18px * 1.5) */
+            font-size: 16px; /* Reduce font size */
             font-weight: 300; /* Thin font */
             color: #587dd6; /* Text color */
             white-space: pre-wrap; /* Allow wrapping inside the box */
@@ -209,7 +209,6 @@
 
         /* ============================= */
         /* Responsive Rules (Mobile View) */
-        /* ============================= */
         @media (max-width: 768px) {
             /* Navbar container for mobile */
             .navbar {
@@ -322,15 +321,15 @@
             }
 
             .text-box {
-                width: 90%; /* Adjust box width for smaller screens */
-                padding: 15px 20px; /* Adjust padding for smaller screens */
+                width: 80%; /* Adjust box width */
+                padding: 10px 15px; /* Adjust padding */
                 max-width: 100%; /* Ensure the box does not exceed the image width */
-                max-height: 100%; /* Ensure the box does not exceed the image height */
+                max-height: 80%; /* Adjust height */
                 overflow: hidden; /* Hide overflow content */
             }
 
             .text-box pre {
-                font-size: 18px; /* Reduce font size for smaller screens */
+                font-size: 12px; /* Further reduce font size for smaller screens */
                 line-height: normal; /* Remove the 0.8 line spacing */
                 white-space: normal; /* Allow text wrapping */
             }

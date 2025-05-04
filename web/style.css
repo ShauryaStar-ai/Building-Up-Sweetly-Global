@@ -321,16 +321,21 @@
             }
 
             .text-box {
-                width: 80%; /* Adjust box width */
-                padding: 10px 15px; /* Adjust padding */
+                width: 85%; /* Further shrink box width */
+                padding: 8px 10px; /* Reduce padding */
                 max-width: 100%; /* Ensure the box does not exceed the image width */
-                max-height: 80%; /* Adjust height */
+                max-height: 75%; /* Reduce height to prevent overflow */
                 overflow: hidden; /* Hide overflow content */
             }
 
             .text-box pre {
-                font-size: 12px; /* Further reduce font size for smaller screens */
-                line-height: normal; /* Remove the 0.8 line spacing */
-                white-space: normal; /* Allow text wrapping */
+                font-size: 10px; /* Further reduce font size for smaller screens */
+                line-height: 1.1; /* Adjust line spacing for better readability */
+                white-space: normal; /* Ensure text wraps properly */
+            }
+
+            .text-box h2 {
+                font-size: 14px; /* Reduce heading size for smaller screens */
+                margin-bottom: 8px; /* Adjust spacing below the heading */
             }
         }

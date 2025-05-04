@@ -150,13 +150,28 @@
             transform: translate(-50%, -50%); /* Adjust for true centering */
             background-color: rgba(253, 242, 231, 0.85); /* Slightly more translucent */
             color: #587dd6; /* Text color */
-            padding: 15px 20px;
+            padding: 30px 40px; /* Increase padding for larger content */
             border-radius: 0; /* Remove rounded edges */
             font-size: 1.2rem;
             font-family: sans-serif;
-            width: 35%; /* Cover 35% of the image width */
+            width: 70%; /* Increase box width to cover most of the image */
             text-align: center; /* Center-align text inside the box */
+            max-width: 100%; /* Ensure the box does not exceed the image width */
+            max-height: 100%; /* Ensure the box does not exceed the image height */
+            overflow: hidden; /* Hide overflow content */
         }
+
+        .text-box pre {
+            font-family: "Journal Sans New Display", serif; /* Update font */
+            font-size: 27px; /* Increase font size by 1.5 times (18px * 1.5) */
+            font-weight: 300; /* Thin font */
+            color: #587dd6; /* Text color */
+            white-space: pre-wrap; /* Allow wrapping inside the box */
+            margin: 0; /* Remove default margin */
+            text-align: center; /* Center-align text inside the box */
+            line-height: normal; /* Remove the 0.8 line spacing */
+        }
+
         @keyframes floatBounce {
             0% {
                 transform: translateY(0);
@@ -307,8 +322,16 @@
             }
 
             .text-box {
-                width: 50%; /* Adjust width for smaller screens */
-                font-size: 1rem; /* Adjust font size */
-                padding: 10px 15px; /* Adjust padding */
+                width: 90%; /* Adjust box width for smaller screens */
+                padding: 15px 20px; /* Adjust padding for smaller screens */
+                max-width: 100%; /* Ensure the box does not exceed the image width */
+                max-height: 100%; /* Ensure the box does not exceed the image height */
+                overflow: hidden; /* Hide overflow content */
+            }
+
+            .text-box pre {
+                font-size: 18px; /* Reduce font size for smaller screens */
+                line-height: normal; /* Remove the 0.8 line spacing */
+                white-space: normal; /* Allow text wrapping */
             }
         }

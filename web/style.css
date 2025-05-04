@@ -136,10 +136,10 @@
         
         /* Image styles */
         #missionImage {
-            display: block; /* Makes the image a block element */
-            max-width: 100%; /* Ensures the image fits within its container */
-            height: auto; /* Maintains aspect ratio */
-            margin: 0 auto; /* Centers the image horizontally */
+            width: 100%; /* Make the image span the full width of the window */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Ensure it's treated as a block element */
+            margin: 0 auto; /* Center the image horizontally */
             margin-bottom: 20px; /* Adds space below the image */
         }
         @keyframes floatBounce {

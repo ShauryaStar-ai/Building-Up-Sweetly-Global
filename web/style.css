@@ -175,33 +175,45 @@ header {
     text-align: center; /* Center-align content inside the div */
     margin-bottom: 30px; /* Add spacing between the divs */
 }
+/* Add a background image to the parent container */
+.background-container {
+    position: relative; /* Ensure child elements can be positioned relative to this container */
+    background-image: url('missionBackgroundImage.png'); /* Replace with the path to your image */
+    background-size: cover; /* Ensure the image covers the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    width: 100%; /* Full width */
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Use flexbox to center the text-box */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    overflow: hidden; /* Prevent content from overflowing the container */
+}
 
 /* Text box styles */
 .text-box {
-    background-color: rgba(248, 239, 228, 0.7); /* Set a translucent background */
-    width: 90%; /* Set width for responsiveness */
-    max-width: 1000px; /* Limit the maximum width */
-    padding: 40px; /* Add padding for better spacing */
-    border-radius: 10px; /* Add rounded corners */
-    color: #587dd6; /* Set text color */
-    font-size: 24px; /* Set font size */
-    font-family: Arial, sans-serif; /* Set font family */
-    text-align: center; /* Align text to the left */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
-    position: relative; /* Position relative for child elements */
-    margin: 0 auto; /* Center the text box */
-    word-wrap: break-word; /* Break long words to fit inside the box */
-    white-space: pre-wrap; /* Preserve line breaks and wrap text as needed */
+    background-color: rgb(243, 236, 225,.9); /* Set a translucent background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for better visibility */
+    max-width: 95%; /* Increase maximum width */
+    max-height: 95%; /* Increase maximum height */
+    overflow: auto; /* Add scrollbars if content overflows */
+    text-align: center; /* Center-align text */
+    color: #587dd6; /* Text color */
+    font-size: 20px; /* Increase font size for readability */
+    padding: 15px; /* Add more padding for better spacing */
+    min-height: 500px;
+    line-height: 1.8; /* Add line spacing for better readability */
 }
 
-.text-box h2 {
-    text-align: center; /* Center-align the heading */
+#founding-story-heading {
+    font-weight: bold; /* Make only the element with this ID bold */
+    display: inline; /* Ensure it doesn't affect the layout of surrounding text */
 }
 
 /* ============================= */
 /* Responsive Rules (Mobile View) */
 /* ============================= */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     /* Navbar container for mobile */
     .navbar {
         display: none; /* Initially hidden */
@@ -307,24 +319,33 @@ header {
     }
 
     .text-box {
-        width: 85%; /* Keep width smaller for smaller screens */
+        width: 95%; /* Keep width smaller for smaller screens */
         max-width: 350px; /* Limit maximum width */
-        padding: 5px; /* Reduce padding to the minimum */
+        padding: 2px; /* Reduce padding to the minimum */
         font-size: 15px; /* Keep font size readable */
         height: auto; /* Allow height to adjust dynamically */
-        min-height: 550px; /* Increase minimum height to ensure text fits */
         word-wrap: break-word; /* Ensure long words break to fit inside */
         white-space: pre-wrap; /* Preserve line breaks and wrap text */
         overflow-wrap: break-word; /* Break long words to fit inside */
+        align-self: center;
+        padding-top: 0; /* Remove extra padding at the top */
+        padding-bottom: 0; /* Remove extra padding at the bottom */
     }
-
     .text-box h2 {
-        margin-top: 5px; /* Reduce space above the heading */
-        margin-bottom: 5px; /* Reduce space below the heading */
+        text-align: center; /* Center-align the heading */
+        margin-bottom: 0px; /* Reduce the space below the heading */
+    }
+    .text-box p, .text-box pre {
+        font-size: 15px; /* Ensure text remains readable */
+        text-align: center
     }
 
-    .text-box p, .text-box pre {
-        font-size: 12px; /* Ensure text remains readable */
-        line-height: 1.4; /* Adjust line spacing for better readability */
+    #founding-story {
+        margin-bottom: 5px; /* Reduce the gap below the element */
+    }
+
+    .background-container {
+        background-size: contain; /* Ensure the entire image is visible */
+        background-position: center; /* Keep the image centered */
     }
 }

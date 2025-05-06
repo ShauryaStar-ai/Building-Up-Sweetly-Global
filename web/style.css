@@ -188,26 +188,31 @@ header {
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     overflow: hidden; /* Prevent content from overflowing the container */
-}
-
-/* Text box styles */
-.text-box {
-    background-color: rgb(243, 236, 225,.9); /* Set a translucent background */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for better visibility */
-    max-width: 95%; /* Increase maximum width */
-    max-height: 95%; /* Increase maximum height */
-    overflow: auto; /* Add scrollbars if content overflows */
-    text-align: center; /* Center-align text */
-    color: #587dd6; /* Text color */
-    font-size: 20px; /* Increase font size for readability */
-    padding: 15px; /* Add more padding for better spacing */
-    min-height: 500px;
-    line-height: 1.8; /* Add line spacing for better readability */
+    .text-box {
+        background-color: rgb(243, 236, 225,.9); /* Set a translucent background */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for better visibility */
+        max-width: 95%; /* Increase maximum width */
+        max-height: 90%; /* Adjust height to fit within the container */
+        overflow-y: auto; /* Add vertical scrolling if content overflows */
+        margin: auto; /* Center the text-box within the container */
+        text-align: center; /* Center-align text */
+        color: #587dd6; /* Text color */
+        font-size: 24px; /* Increase font size */
+        line-height: 2; /* Adjust line height for better spacing */
+        padding: 15px; /* Add more padding for better spacing */
+        min-height: 500px;
+    }
 }
 
 #founding-story-heading {
     font-weight: bold; /* Make only the element with this ID bold */
     display: inline; /* Ensure it doesn't affect the layout of surrounding text */
+}
+
+.bold-text {
+    font-weight: bold; /* Make text bold */
+    text-align: center; /* Center-align the text */
+    display: block; /* Ensure it behaves as a block element for centering */
 }
 
 /* ============================= */
@@ -319,7 +324,7 @@ header {
     }
 
     .text-box {
-        width: 95%; /* Keep width smaller for smaller screens */
+        width: 90%; /* Keep width smaller for smaller screens */
         max-width: 350px; /* Limit maximum width */
         padding: 2px; /* Reduce padding to the minimum */
         font-size: 15px; /* Keep font size readable */
@@ -347,5 +352,7 @@ header {
     .background-container {
         background-size: contain; /* Ensure the entire image is visible */
         background-position: center; /* Keep the image centered */
+        min-height: 100vh;
+        height: auto;
     }
 }

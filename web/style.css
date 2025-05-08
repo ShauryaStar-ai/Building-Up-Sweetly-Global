@@ -214,22 +214,24 @@ header {
     display: block; /* Ensure it behaves as a block element for centering */
 }
 
+#Communnity, #CommunnityIntro {
+    width: 75vw; /* Set the same width for both */
+    margin: 0 auto; /* Center horizontally */
+    text-align: center; /* Center-align the text */
+}
+
 #CommunnityIntro {
     color: #35abec; /* Set the text color */
     font-size: 60px; /* Set font size */
     font-family: 'Playfair Display', serif;
-    text-align: center; /* Center-align the text */
     margin: 60px 0; /* Add top and bottom margin */
     margin-bottom: 20px; /* Add spacing below the heading */
     display: block; /* Make it a block-level element */
-
 }
+
 #Communnity {
-    text-align: center; /* Center-align the text */
-    margin: 0 auto; /* Center the container horizontally */
     color: rgb(133, 161, 255); /* Set text color */
     font-size: 15px; /* Set font size */
-    width: 60%; /* Adjust width for better layout */
     max-width: 75vh; /* Add a maximum width for responsiveness */
     line-height: 1.5; /* Adjust line height for better spacing */
 }
@@ -372,6 +374,11 @@ header {
     }
 
     #CommunnityIntro {
+        font-size: 22px; /* Reduce font size for smaller screens */
+        width: 75vw; /* Ensure the text fits in one line */
+        white-space: nowrap; /* Prevent text from wrapping */
+        margin: 0 auto; /* Center the text horizontally */
+        text-align: center; /* Ensure the text is centered */
     }
 
     .Communnity {

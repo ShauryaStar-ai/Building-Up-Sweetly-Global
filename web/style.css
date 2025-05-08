@@ -236,35 +236,44 @@ header {
 
 /* Grid container for Mission and Vision sections */
 .MissionVisionGrid {
-    display: grid;                          /* Use CSS Grid layout */
-    grid-template-columns: 120px auto;     /* Two columns: narrow for labels, wide for content */
-    gap: 10px 5px;                          /* 10px vertical gap, 5px horizontal gap */
-    padding: 5px 20px;                      /* 5px top/bottom, 20px left/right inside the box */
-    font-family: sans-serif;               /* Clean font style */
-    margin: 0 auto;                         /* Center the grid box horizontally */
-    max-width: 50vw;                        /* Restrict width only for larger screens */
-    width: fit-content;                     /* Make the box only as wide as needed */
-    box-sizing: border-box;                /* Include padding in the width calculation */
+    display: grid; /* Use CSS Grid layout */
+    grid-template-columns: 1fr 3fr; /* Adjust column ratio for terms and definitions */
+    gap: 20px 10px; /* Add spacing between rows and columns */
+    padding: 30px 20px; /* Add padding inside the grid */
+    margin: 0 auto; /* Center the grid horizontally */
+    max-width: 50vw; /* Restrict width for larger screens */
+    width: fit-content; /* Adjust width to fit content */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .Mission {
   grid-column: 1;
   grid-row: 1;
+  color: rgb(255, 84, 146);
+  font-size: 40px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .MissionDefination {
   grid-column: 2;
   grid-row: 1;
+  color: #35abec;
+  font-size: 15px;
 }
 
 .Vision {
   grid-column: 1;
   grid-row: 2;
+  color: rgb(125, 227, 99);
+  font-size: 40px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .VisionDefination {
   grid-column: 2;
   grid-row: 2;
+  color: #35abec;
+  font-size: 15px;
 }
 
 /* ============================= */
@@ -443,15 +452,26 @@ header {
     }
 
     .MissionVisionGrid {
-        grid-template-columns: 1fr; /* Make the grid stack vertically */
-        gap: 20px; /* Increase spacing between rows */
-        max-width: none; /* Remove max-width restriction for smaller screens */
-        width: 100vw; /* Allow the grid to take full width */
-        padding: 15px; /* Add more padding for better spacing */
+        display: grid; /* Use CSS Grid layout */
+        grid-template-columns: 1fr; /* Stack terms and definitions vertically */
+        gap: 20px; /* Add spacing between rows */
+        padding: 15px; /* Adjust padding for smaller screens */
+        width: 100%; /* Use full width for smaller screens */
         margin: 0 auto; /* Center the grid horizontally */
+        max-width: 90vw; /* Restrict width for smaller screens */
     }
 
-    .Mission, .MissionDefination, .Vision, .VisionDefination {
-        grid-column: 1; /* Ensure all items span the full width */
+    .Mission, .Vision {
+        grid-column: 1; /* Ensure terms span the full width */
+        text-align: center; /* Center-align the text */
+        font-size: 30px; /* Adjust font size for smaller screens */
+        margin-bottom: 10px; /* Add spacing below the term */
+    }
+
+    .MissionDefination, .VisionDefination {
+        grid-column: 1; /* Ensure definitions span the full width */
+        text-align: left; /* Align definitions to the left */
+        font-size: 14px; /* Adjust font size for readability */
+        margin-top: 0; /* Remove extra spacing above the definition */
     }
 }

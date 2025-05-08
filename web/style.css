@@ -234,15 +234,17 @@ header {
     margin: 0 auto; /* Center horizontally */
 }
 
+/* Grid container for Mission and Vision sections */
 .MissionVisionGrid {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 10px 20px;
-  padding: 20px;
-  font-family: sans-serif;
-  width: fit-content;
-  margin: 0 auto;
-  place-content: center;
+    display: grid;                          /* Use CSS Grid layout */
+    grid-template-columns: 120px auto;     /* Two columns: narrow for labels, wide for content */
+    gap: 10px 5px;                          /* 10px vertical gap, 5px horizontal gap */
+    padding: 5px 20px;                      /* 5px top/bottom, 20px left/right inside the box */
+    font-family: sans-serif;               /* Clean font style */
+    margin: 0 auto;                         /* Center the grid box horizontally */
+    max-width: 50vw;                        /* Prevent the box from stretching too wide */
+    width: fit-content;                     /* Make the box only as wide as needed */
+    box-sizing: border-box;                /* Include padding in the width calculation */
 }
 
 .Mission {

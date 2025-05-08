@@ -242,7 +242,7 @@ header {
     padding: 5px 20px;                      /* 5px top/bottom, 20px left/right inside the box */
     font-family: sans-serif;               /* Clean font style */
     margin: 0 auto;                         /* Center the grid box horizontally */
-    max-width: 50vw;                        /* Prevent the box from stretching too wide */
+    max-width: 50vw;                        /* Restrict width only for larger screens */
     width: fit-content;                     /* Make the box only as wide as needed */
     box-sizing: border-box;                /* Include padding in the width calculation */
 }
@@ -416,5 +416,42 @@ header {
         font-size: 15px; /* Reduce font size for readability */
         width: 90%; /* Increase width for better layout */
         line-height: 1.3; /* Adjust line height for spacing */
+    }
+
+    .Mission {
+        grid-column: 1;
+        grid-row: 1;
+        text-align: center; /* Center-align the text */
+        margin: 0 auto; /* Center horizontally */
+    }
+
+    .MissionDefination {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .Vision {
+        grid-column: 1;
+        grid-row: 3;
+        text-align: center; /* Center-align the text */
+        margin: 0 auto; /* Center horizontally */
+    }
+
+    .VisionDefination {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    .MissionVisionGrid {
+        grid-template-columns: 1fr; /* Make the grid stack vertically */
+        gap: 20px; /* Increase spacing between rows */
+        max-width: none; /* Remove max-width restriction for smaller screens */
+        width: 100vw; /* Allow the grid to take full width */
+        padding: 15px; /* Add more padding for better spacing */
+        margin: 0 auto; /* Center the grid horizontally */
+    }
+
+    .Mission, .MissionDefination, .Vision, .VisionDefination {
+        grid-column: 1; /* Ensure all items span the full width */
     }
 }

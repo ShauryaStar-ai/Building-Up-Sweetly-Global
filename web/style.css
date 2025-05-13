@@ -214,7 +214,17 @@ header {
     display: block; /* Ensure it behaves as a block element for centering */
 }
 
+#testimonial {
+    display: block;
+    margin-bottom: 8px;
+    /* Optional: add more styling as needed */
+}
 
+#author {
+    display: block;
+    font-size: 16px;
+    text-align: center;
+}
 
 #CommunnityIntro {
     color: #35abec; /* Set the text color */
@@ -274,6 +284,89 @@ header {
   grid-row: 2;
   color: #35abec;
   font-size: 15px;
+}
+
+/* Container takes full screen and centers slides */
+.slideshow-container {
+  width: 100%;
+  height: 45vh; /* Reduced height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Each slide is hidden by default and absolutely positioned */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 25px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Only the active slide is shown */
+.slide.active {
+  display: flex;
+}
+
+/* Unique background colors for each slide */
+.slide:nth-child(1) { background-color: rgb(128, 154, 215); }  /* Coral Red */
+.slide:nth-child(2) { background-color: rgb(133, 188, 218); }  /* Purple */
+.slide:nth-child(3) { background-color: rgb(247, 163, 194); }  /* Green */
+.slide:nth-child(4) { background-color: rgb(224, 159, 94); }  /* Orange */
+.slide:nth-child(5) { background-color: rgb(165, 174, 139); }  /* Aqua Blue */
+.slide:nth-child(6) { background-color: rgb(135, 112, 96); }  /* Orchid Purple */
+
+/* Navigation buttons are positioned at the bottom */
+.nav-buttons {
+position: absolute;
+  bottom: 20px;
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* Styling for buttons */
+button {
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  ;
+}
+
+/* Remove box and style for nav icon buttons */
+#prevBtn, #nextBtn {
+  background: none;
+  box-shadow: none;
+  border: none;
+  font-size: 3em;
+  color: rgb(250, 250, 250);
+  border-radius: 0;
+  padding: 0 20px;
+  transition: color 0.2s;
+}
+
+#prevBtn:hover, #nextBtn:hover {
+  color: #ff758c;
+  background: none;
+}
+
+/* Slightly darker background on hover for other buttons */
+button:hover {
+  background-color: rgba(255,255,255,0.9);
 }
 
 /* ============================= */

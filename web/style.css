@@ -214,17 +214,7 @@ header {
     display: block; /* Ensure it behaves as a block element for centering */
 }
 
-#testimonial {
-    display: block;
-    margin-bottom: 8px;
-    /* Optional: add more styling as needed */
-}
 
-#author {
-    display: block;
-    font-size: 16px;
-    text-align: center;
-}
 
 #CommunnityIntro {
     color: #35abec; /* Set the text color */
@@ -285,39 +275,74 @@ header {
   color: #35abec;
   font-size: 15px;
 }
-
-/* Container takes full screen and centers slides */
+/* 
+    Container for the slideshow.
+    Takes full screen width, reduced height, centers slides both vertically and horizontally,
+    and hides overflow to prevent slides from spilling out.
+*/
 .slideshow-container {
-  width: 100%;
-  height: 45vh; /* Reduced height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
+    width: 100%;
+    height: 45vh; /* Reduced height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Each slide is hidden by default and absolutely positioned */
+/* 
+    Each slide is absolutely positioned, hidden by default (opacity: 0),
+    and uses a fade transition. Slides are centered and styled for readability.
+*/
 .slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: none; /* Hidden by default */
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 25px;
-  padding: 20px;
-  box-sizing: border-box;
-  text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Invisible by default */
+    transition: opacity 1s ease-in-out; /* Fade transition */
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    pointer-events: none; /* Prevent interaction when invisible */
+    display: flex;
+    flex-direction: column;
 }
 
-/* Only the active slide is shown */
+/* 
+    The active slide is visible (opacity: 1) and interactive.
+*/
 .slide.active {
-  display: flex;
+    opacity: 1; /* Show active slide */
+    pointer-events: auto;
 }
 
-/* Unique background colors for each slide */
+/* 
+    Testimonial text styling.
+    Displayed as a block with spacing below.
+*/
+#testimonial {
+        display: block;
+        margin-bottom: 8px;
+        /* Optional: add more styling as needed */
+}
+
+/* 
+    Author text styling.
+    Displayed as a block and centered.
+*/
+#author {
+        display: block;
+        text-align: center;
+}
+
+/* 
+    Unique background colors for each slide using nth-child selector.
+    Each slide gets a different color for visual distinction.
+*/
 .slide:nth-child(1) { background-color: rgb(128, 154, 215); }  /* Coral Red */
 .slide:nth-child(2) { background-color: rgb(133, 188, 218); }  /* Purple */
 .slide:nth-child(3) { background-color: rgb(247, 163, 194); }  /* Green */
@@ -325,48 +350,109 @@ header {
 .slide:nth-child(5) { background-color: rgb(165, 174, 139); }  /* Aqua Blue */
 .slide:nth-child(6) { background-color: rgb(135, 112, 96); }  /* Orchid Purple */
 
-/* Navigation buttons are positioned at the bottom */
+/* 
+    Navigation buttons container.
+    Absolutely positioned to cover the slideshow, aligns buttons to left and right,
+    and centers them vertically.
+*/
 .nav-buttons {
-position: absolute;
-  bottom: 20px;
-  height: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 40px;
-  box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center vertically */
+    padding: 0 40px;
+    box-sizing: border-box;
 }
 
-/* Styling for buttons */
+/* 
+    General button styling.
+    No border, rounded corners, pointer cursor, and padding.
+*/
 button {
-  border: none;
-  padding: 10px 20px;
-  font-size: 1em;
-  cursor: pointer;
-  border-radius: 5px;
-  ;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    ;
 }
 
-/* Remove box and style for nav icon buttons */
+/* 
+    Specific styling for previous and next navigation buttons.
+    Removes background and box shadow, increases font size for icons,
+    and adds color and padding.
+*/
 #prevBtn, #nextBtn {
-  background: none;
-  box-shadow: none;
-  border: none;
-  font-size: 3em;
-  color: rgb(250, 250, 250);
-  border-radius: 0;
-  padding: 0 20px;
-  transition: color 0.2s;
+    background: none;
+    box-shadow: none;
+    border: none;
+    font-size: 3em;
+    color: rgb(250, 250, 250);
+    border-radius: 0;
+    padding: 0 20px;
+    transition: color 0.2s;
 }
 
+/* 
+    Hover effect for navigation buttons.
+    Changes color to highlight on hover.
+*/
 #prevBtn:hover, #nextBtn:hover {
-  color: #ff758c;
-  background: none;
+    color: #ff758c;
+    background: none;
 }
 
-/* Slightly darker background on hover for other buttons */
+/* 
+    Hover effect for all buttons.
+    Slightly darkens background on hover for feedback.
+*/
 button:hover {
-  background-color: rgba(255,255,255,0.9);
+    background-color: rgba(255,255,255,0.9);
+}
+
+/* 
+    Dots container for slide indicators.
+    Absolutely positioned at the bottom, centers dots horizontally, and adds spacing.
+*/
+.dots-container {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* 
+    Individual dot styling.
+    Large clickable dots, white color, with scaling animation on hover.
+*/
+.dot {
+    font-size: 24px;
+    cursor: pointer;
+    color: white; /* Make the dots white */
+    transition: transform 0.3s ease;
+    user-select: none;
+}
+
+/* 
+    Dot hover effect.
+    Enlarges the dot for feedback.
+*/
+.dot:hover {
+    transform: scale(1.3);
+}
+
+/* 
+    Active dot styling.
+    Keeps the active dot white (could be customized for more feedback).
+*/
+.dot.active {
+    color: white;
 }
 
 /* ============================= */
@@ -566,5 +652,33 @@ button:hover {
         text-align: left; /* Align definitions to the left */
         font-size: 14px; /* Adjust font size for readability */
         margin-top: 0; /* Remove extra spacing above the definition */
+    }
+
+    .slideshow-container {
+        height: 28vh; /* Smaller height for mobile */
+        padding: 0;
+        width: auto;
+        max-width: 100%;
+    }
+    .slide {
+        font-size: 15px;
+        padding: 8px;
+    }
+    #testimonial {
+        font-size: 14px;
+        max-width: 40%; /* Limit width for smaller screens */
+    }
+    #author {
+        font-size: 12px;
+    }
+    .nav-buttons {
+        padding: 0 10px;
+    }
+    #prevBtn, #nextBtn {
+        font-size: 2em;
+        padding: 0 10px;
+    }
+    .dot {
+        font-size: 18px;
     }
 }

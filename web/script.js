@@ -1,5 +1,7 @@
 // Get all slide elements and store in an array
 const slides = document.querySelectorAll(".slide");
+const dotsContainer = document.getElementById("dotsContainer");
+
 
 // Get navigation buttons by their IDs
 const nextBtn = document.getElementById("nextBtn");
@@ -17,12 +19,24 @@ let slideInterval = setInterval(nextSlide, 10000);
  */
 function showSlide(index) {
   slides.forEach((slide, i) => {
-    slide.classList.remove("active"); // Hide all slides
-    if (i === index) {
-      slide.classList.add("active");  // Show the current slide
-    }
+    slide.classList.remove("active");
+    dots[i].innerText = "●"; // Filled for non-active
   });
+
+  slides[index].classList.add("active");
+  dots[index].innerText = "○"; // Hollow for active
 }
+slides.forEach((_, i) => {
+  const dot = document.createElement("span");
+  dot.classList.add("dot");
+  dot.innerText = "●"; // Filled dot initially
+  dot.addEventListener("click", () => {
+    current = i;
+    showSlide(current);
+    resetTimer();
+  });
+  dotsContainer.appendChild(dot);
+});
 
 /**
  * Moves to the next slide
@@ -59,3 +73,4 @@ function resetTimer() {
   clearInterval(slideInterval); // Stop the existing timer
   slideInterval = setInterval(nextSlide, 10000); // Start a new 10s timer
 }
+const dots = document.querySelectorAll(".dot");

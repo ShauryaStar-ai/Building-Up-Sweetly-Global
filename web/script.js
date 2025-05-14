@@ -11,7 +11,7 @@ const prevBtn = document.getElementById("prevBtn");
 let current = 0;
 
 // Automatically change slide every 10 seconds
-let slideInterval = setInterval(nextSlide, 10000);
+let slideInterval = setInterval(nextSlide, 6000);
 
 /**
  * Shows a slide at a specific index and hides others
@@ -71,6 +71,6 @@ prevBtn.addEventListener("click", () => {
  */
 function resetTimer() {
   clearInterval(slideInterval); // Stop the existing timer
-  slideInterval = setInterval(nextSlide, 10000); // Start a new 10s timer
+  slideInterval = setInterval(nextSlide, 6000); // Start a new 10s timer
 }
 const dots = document.querySelectorAll(".dot");

@@ -498,6 +498,14 @@ button:hover {
     background: linear-gradient(135deg, #ff758c, #7ed0ff); /* Reverse the gradient on hover */
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Add a stronger shadow on hover */
 }
+#lineEnding{
+    border: none;
+  height: 1px;
+  background-color: rgb(88, 125, 214);
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 75px;  
+}
 @media (max-width: 480px) {
     /* Navbar container for mobile */
     .navbar {
@@ -733,5 +741,32 @@ button:hover {
         margin-top: 15px;
         margin-left: 10px;
         text-align: left;
+    }
+
+    #line {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #Instagram {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    #InstaButton {
+        font-size: 11px;
+        padding: 12px 20px;
+        margin: 15px auto;
+        width: 15vw;
+    }
+
+    #InstaButton:hover {
+        background: linear-gradient(135deg, #ff758c, #7ed0ff);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    #lineEnding {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 20px;
     }
 }

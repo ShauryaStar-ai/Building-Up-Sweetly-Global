@@ -250,7 +250,7 @@ header {
   grid-column: 1;
   grid-row: 1;
   color: rgb(255, 84, 146);
-  font-size: 40px;
+  font-size: 30px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -265,7 +265,7 @@ header {
   grid-column: 1;
   grid-row: 2;
   color: rgb(125, 227, 99);
-  font-size: 40px;
+  font-size: 30px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -505,6 +505,13 @@ button:hover {
   margin-left: 30px;
   margin-right: 30px;
   margin-top: 75px;  
+}
+.footer{
+    margin-left: 30px;
+    font-size: 35px;
+    color: rgb(88, 125, 214);
+    font-family: 'Comic Sans MS', cursive;
+    font-weight: bold;
 }
 @media (max-width: 480px) {
     /* Navbar container for mobile */

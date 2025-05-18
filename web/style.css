@@ -506,13 +506,31 @@ button:hover {
   margin-right: 30px;
   margin-top: 75px;  
 }
-.footer{
+.footer {
     margin-left: 30px;
+}
+
+.brand {
     font-size: 35px;
     color: rgb(88, 125, 214);
     font-family: 'Comic Sans MS', cursive;
     font-weight: bold;
+    margin-right: 15px; /* space between the two */
 }
+
+.email {
+    font-size: 15px;
+    font-family: 'Times New Roman', serif;
+    color: rgb(88, 125, 214);
+    margin-left: 900px;
+}
+.Instagram{
+    font-size: 15px;
+    font-family: 'Times New Roman', serif;
+    color: rgb(88, 125, 214);
+    margin-left: 100px;
+}
+
 @media (max-width: 480px) {
     /* Navbar container for mobile */
     .navbar {
@@ -776,4 +794,26 @@ button:hover {
         margin-right: 10px;
         margin-top: 20px;
     }
+.footer {
+    margin-left: 10px;
+}
+
+.brand {
+    font-size: 20px;
+    color: rgb(88, 125, 214);
+    font-family: 'Comic Sans MS', cursive;
+    font-weight: bold;
+}
+
+.email {
+    font-size: 8px;
+    font-family: 'Times New Roman', serif;
+    color: rgb(88, 125, 214);
+    margin-left: 100px
+}
+
+.Instagram{
+    font-size: 8px;
+    margin-left: 30px;
+}
 }

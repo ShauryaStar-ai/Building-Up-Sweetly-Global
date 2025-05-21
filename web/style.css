@@ -589,7 +589,34 @@ button:hover {
   color: rgb(125, 138, 214);
   font-size: 15px;
 }
-
+/* The CSS for the menu.html */
+#meunImage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    width: 100%;
+}
+#meunImage img {
+    max-width: 95%;
+    height: auto;
+    display: block;
+}
+.menuIntro{
+    color: rgb(88, 125, 214); /* Set the text color */
+    font-size: 55px; /* Set font size */
+    font-family: 'Playfair Display', serif;
+    margin: 60px 0; /* Add top and bottom margin */
+    margin-bottom: 20px; /* Add spacing below the heading */
+    display: block; /* Make it a block-level element */
+    text-align: center; /* Center-align the text */
+}
+.menutext{
+      font-size: 16px;
+  text-align: center;
+    color: rgb(88, 125, 214);
+    margin-bottom: 30px; /* space between the two */
+}
 @media (max-width: 480px) {
     /* Navbar container for mobile */
     .navbar {
@@ -908,4 +935,9 @@ button:hover {
     font-size: 14px;
     margin-top: 0;
   }
+/* The CSS for the menu.html */
+
+.menuIntro{
+    font-size: 35px; /* Set font size */
+    margin-top: 15px; /* Add top margin */
 }

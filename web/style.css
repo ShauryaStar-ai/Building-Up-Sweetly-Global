@@ -856,7 +856,12 @@ button:hover {
 .footer {
     margin-left: 10px;
 }
-
+.bussinessPlanHeading{
+    font-size: 25px;
+}
+.Intro{
+    font-size:15px;
+}
 .brand {
     font-size: 20px;
     color: rgb(88, 125, 214);
@@ -873,7 +878,7 @@ button:hover {
 
 .Instagram{
     font-size: 8px;
-    margin-left: 30px;
+    margin-left: 300px;
 }
 
 /* The CSS for the bussinessPlan.html */

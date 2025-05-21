@@ -617,6 +617,41 @@ button:hover {
     color: rgb(88, 125, 214);
     margin-bottom: 30px; /* space between the two */
 }
+.menuGrid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 15px 10px;
+  max-width: 50vw;
+  width: fit-content;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.menuGrid .sectionTitle {
+  grid-column: 1 / span 2; /* span across both columns */
+  font-size: 28px;
+  font-weight: bold;
+  color: rgb(88, 125, 214);
+  margin-top: 40px;
+  margin-bottom: 15px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+}
+.menuName {
+  grid-column: 1;          /* always in first column */
+  font-size: 24px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0;               /* reset margin */
+  padding: 0;              /* reset padding */
+  color: rgb(88, 125, 214); /* default color (can be overridden inline or with classes) */
+}
+
+.menuDetails {
+  color: rgb(125, 138, 214);
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+
 @media (max-width: 480px) {
     /* Navbar container for mobile */
     .navbar {
@@ -937,7 +972,57 @@ button:hover {
   }
 /* The CSS for the menu.html */
 
-.menuIntro{
-    font-size: 35px; /* Set font size */
-    margin-top: 15px; /* Add top margin */
+
+  .menuGrid {
+    grid-template-columns: 1fr;
+    max-width: 90vw;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .menuName {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .menuDetails {
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .menuGrid .seasonalTitle,
+  .menuGrid .seasonalText {
+    grid-column: 1;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .menutext{
+    max-width: 95vw;
+  }
+  #meunImage {
+    margin: 20px auto;
+    width: 100%;
+  }
+
+  #meunImage img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .menuIntro {
+    font-size: 36px; /* reduce heading size for smaller screens */
+    margin: 40px 0 15px;
+    padding: 0 10px;
+  }
+
+  .menutext {
+    font-size: 14px; /* slightly smaller body text */
+    padding: 0 15px;
+    margin-bottom: 20px;
+  }
+
+
+
 }
